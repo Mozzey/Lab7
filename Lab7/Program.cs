@@ -39,10 +39,9 @@ namespace Lab7
                 // Date RegEx
                 var dateRegex = @"^\d{2}/\d{2}/\d{4}$";
                 // Matching HTML open and close tags RegEx
-                var htmlRegex = @"(<[a-z1-6]{0,9}>)(</[a-z1-6]{0,9}>)";
-
-                // write a two expressions to hold the opening and closing bracket then check everything between the < compareThis >
-                // and everything between the </ compareThis >
+                var htmlRegex = @"<([a-z1-6]{0,9})>([^<].+)?</\1>$";
+                // Match HTML self closing tags
+                var selfClosingHtmlRegex = @"^(<[a-z1-6]{0,9}\s?/>)$";
                 // ================================================
 
                 // ask user to input data
@@ -55,6 +54,8 @@ namespace Lab7
                 var validPhoneNumber = Regex.IsMatch(userInput, phoneNumberRegex);
                 var validDate = Regex.IsMatch(userInput, dateRegex);
                 var validHTML = Regex.IsMatch(userInput, htmlRegex);
+                var validSelfClosing = Regex.IsMatch(userInput, selfClosingHtmlRegex);
+
                 // if name matches display it
                 if (validName)
                 {
@@ -77,6 +78,11 @@ namespace Lab7
                 }
                 // if HTML matches regex display it
                 else if (validHTML)
+                {
+                    DisplayIsValid(userInput);
+                }
+                // if HTML matches SELF CLOSING/SINGLE TAG html regex display it
+                else if (validSelfClosing)
                 {
                     DisplayIsValid(userInput);
                 }
