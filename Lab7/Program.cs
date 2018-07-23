@@ -7,8 +7,6 @@ namespace Lab7
     {
         static void Main(string[] args)
         {
-            // Write a program that will recognize different types of invalid input
-
             // VALIDATE NAMES -- format == 
             ////names can have only alphabets, should start with a capital letter, max length of 30
 
@@ -24,8 +22,6 @@ namespace Lab7
 
             // VALIDATE DATE -- format ==
             //// ( dd/mm/yyyy )
-
-            
             bool isRunning = true;
             while (isRunning)
             {
@@ -44,6 +40,9 @@ namespace Lab7
                 var dateRegex = @"^\d{2}/\d{2}/\d{4}$";
                 // Matching HTML open and close tags RegEx
                 var htmlRegex = @"(<[a-z1-6]{0,9}>)(</[a-z1-6]{0,9}>)";
+
+                // write a two expressions to hold the opening and closing bracket then check everything between the < compareThis >
+                // and everything between the </ compareThis >
                 // ================================================
 
                 // ask user to input data
