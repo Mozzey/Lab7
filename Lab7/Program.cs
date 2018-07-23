@@ -43,7 +43,7 @@ namespace Lab7
                 // Date RegEx
                 var dateRegex = @"^\d{2}/\d{2}/\d{4}$";
                 // Matching HTML open and close tags RegEx
-                var htmlRegex = @"(<[a-z]{0,9}>)(</[a-z]{0,9}>)";
+                var htmlRegex = @"(<[a-z1-6]{0,9}>)(</[a-z1-6]{0,9}>)";
                 // ================================================
 
                 // ask user to input data
